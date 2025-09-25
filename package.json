@@ -1,11 +1,11 @@
 {
   "name": "@payard/export-model-types",
   "version": "1.0.0",
+  "main": "index.js",
   "types": "index.d.ts",
   "files": [
     "index.d.ts",
-    "src/enums.d.ts"
-  ],
-  "sideEffects": false,
-  "private": false
+    "src/enums.d.ts",
+    "index.js"
+  ]
 }
