@@ -1,3 +1,21 @@
+export enum ApiMethod {
+  GET = 'GET',
+  POST = 'POST',
+  PUT = 'PUT',
+  DELETE = 'DELETE',
+  PATCH = 'PATCH',
+  HEAD = 'HEAD',
+  OPTIONS = 'OPTIONS',
+}
+
+export enum ApiCallType {
+  PROVIDER_REQUEST = 'PROVIDER_REQUEST',
+  PROVIDER_CALLBACK = 'PROVIDER_CALLBACK',
+  MERCHANT_CALLBACK = 'MERCHANT_CALLBACK',
+  INTERNAL_SERVICE = 'INTERNAL_SERVICE',
+  OTHER = 'OTHER',
+}
+
 export enum TransactionType {
   PAYMENT = 'PAYMENT',
 }
@@ -442,12 +460,6 @@ export enum Environment {
   PROD = 'PROD',
 }
 
-export enum EnvironmentScope {
-  SANDBOX = 'SANDBOX',
-  PROD = 'PROD',
-  BOTH = 'BOTH',
-}
-
 export enum MerchantLicenseType {
   TRIAL = 'TRIAL',
   SUBSCRIPTION = 'SUBSCRIPTION',
@@ -457,6 +469,7 @@ export enum MerchantLicenseType {
 export enum MerchantLicenseStatus {
   ACTIVE = 'ACTIVE',
   EXPIRED = 'EXPIRED',
+  CANCELED = 'CANCELED',
   SUSPENDED = 'SUSPENDED',
 }
 
