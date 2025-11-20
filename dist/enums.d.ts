@@ -1,3 +1,19 @@
+export declare enum ApiMethod {
+    GET = "GET",
+    POST = "POST",
+    PUT = "PUT",
+    DELETE = "DELETE",
+    PATCH = "PATCH",
+    HEAD = "HEAD",
+    OPTIONS = "OPTIONS"
+}
+export declare enum ApiCallType {
+    PROVIDER_REQUEST = "PROVIDER_REQUEST",
+    PROVIDER_CALLBACK = "PROVIDER_CALLBACK",
+    MERCHANT_CALLBACK = "MERCHANT_CALLBACK",
+    INTERNAL_SERVICE = "INTERNAL_SERVICE",
+    OTHER = "OTHER"
+}
 export declare enum TransactionType {
     PAYMENT = "PAYMENT"
 }
@@ -388,11 +404,6 @@ export declare enum Environment {
     SANDBOX = "SANDBOX",
     PROD = "PROD"
 }
-export declare enum EnvironmentScope {
-    SANDBOX = "SANDBOX",
-    PROD = "PROD",
-    BOTH = "BOTH"
-}
 export declare enum MerchantLicenseType {
     TRIAL = "TRIAL",
     SUBSCRIPTION = "SUBSCRIPTION",
@@ -401,6 +412,7 @@ export declare enum MerchantLicenseType {
 export declare enum MerchantLicenseStatus {
     ACTIVE = "ACTIVE",
     EXPIRED = "EXPIRED",
+    CANCELED = "CANCELED",
     SUSPENDED = "SUSPENDED"
 }
 export declare enum Metric {

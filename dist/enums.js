@@ -1,3 +1,21 @@
+export var ApiMethod;
+(function (ApiMethod) {
+    ApiMethod["GET"] = "GET";
+    ApiMethod["POST"] = "POST";
+    ApiMethod["PUT"] = "PUT";
+    ApiMethod["DELETE"] = "DELETE";
+    ApiMethod["PATCH"] = "PATCH";
+    ApiMethod["HEAD"] = "HEAD";
+    ApiMethod["OPTIONS"] = "OPTIONS";
+})(ApiMethod || (ApiMethod = {}));
+export var ApiCallType;
+(function (ApiCallType) {
+    ApiCallType["PROVIDER_REQUEST"] = "PROVIDER_REQUEST";
+    ApiCallType["PROVIDER_CALLBACK"] = "PROVIDER_CALLBACK";
+    ApiCallType["MERCHANT_CALLBACK"] = "MERCHANT_CALLBACK";
+    ApiCallType["INTERNAL_SERVICE"] = "INTERNAL_SERVICE";
+    ApiCallType["OTHER"] = "OTHER";
+})(ApiCallType || (ApiCallType = {}));
 export var TransactionType;
 (function (TransactionType) {
     TransactionType["PAYMENT"] = "PAYMENT";
@@ -442,12 +460,6 @@ export var Environment;
     Environment["SANDBOX"] = "SANDBOX";
     Environment["PROD"] = "PROD";
 })(Environment || (Environment = {}));
-export var EnvironmentScope;
-(function (EnvironmentScope) {
-    EnvironmentScope["SANDBOX"] = "SANDBOX";
-    EnvironmentScope["PROD"] = "PROD";
-    EnvironmentScope["BOTH"] = "BOTH";
-})(EnvironmentScope || (EnvironmentScope = {}));
 export var MerchantLicenseType;
 (function (MerchantLicenseType) {
     MerchantLicenseType["TRIAL"] = "TRIAL";
@@ -458,6 +470,7 @@ export var MerchantLicenseStatus;
 (function (MerchantLicenseStatus) {
     MerchantLicenseStatus["ACTIVE"] = "ACTIVE";
     MerchantLicenseStatus["EXPIRED"] = "EXPIRED";
+    MerchantLicenseStatus["CANCELED"] = "CANCELED";
     MerchantLicenseStatus["SUSPENDED"] = "SUSPENDED";
 })(MerchantLicenseStatus || (MerchantLicenseStatus = {}));
 export var Metric;
