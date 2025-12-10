@@ -87,6 +87,9 @@ export enum MerchantCallbackType {
   TRANSACTION_CHANGED = 'TRANSACTION_CHANGED',
   TRANSACTION_DELETED = 'TRANSACTION_DELETED',
   TRANSACTION_STATUS_CHANGED = 'TRANSACTION_STATUS_CHANGED',
+  SUBSCRIPTION_CREATED = 'SUBSCRIPTION_CREATED',
+  SUBSCRIPTION_UPDATED = 'SUBSCRIPTION_UPDATED',
+  SUBSCRIPTION_CANCELLED = 'SUBSCRIPTION_CANCELLED',
   PAYIN_DESTINATION_ACCOUNT_CREATED = 'PAYIN_DESTINATION_ACCOUNT_CREATED',
   PAYIN_DESTINATION_ACCOUNT_UPDATED = 'PAYIN_DESTINATION_ACCOUNT_UPDATED',
   PAYIN_DESTINATION_ACCOUNT_DELETED = 'PAYIN_DESTINATION_ACCOUNT_DELETED',
@@ -296,6 +299,7 @@ export enum PayIdType {
 
 export enum PayinDestinationType {
   STANDARD = 'STANDARD',
+  SUBSCRIPTION = 'SUBSCRIPTION',
   VIRTUAL = 'VIRTUAL',
   VIRTUAL_POOL = 'VIRTUAL_POOL',
 }
@@ -464,6 +468,7 @@ export enum MerchantLicenseType {
   TRIAL = 'TRIAL',
   SUBSCRIPTION = 'SUBSCRIPTION',
   ENTERPRISE = 'ENTERPRISE',
+  OWNER = 'OWNER',
 }
 
 export enum MerchantLicenseStatus {
@@ -471,6 +476,25 @@ export enum MerchantLicenseStatus {
   EXPIRED = 'EXPIRED',
   CANCELED = 'CANCELED',
   SUSPENDED = 'SUSPENDED',
+}
+
+export enum SubscriptionStatus {
+  ACTIVE = 'ACTIVE',
+  PAUSED = 'PAUSED',
+  CANCELED = 'CANCELED',
+  INCOMPLETE = 'INCOMPLETE',
+  INCOMPLETE_EXPIRED = 'INCOMPLETE_EXPIRED',
+  TRIALING = 'TRIALING',
+  PAST_DUE = 'PAST_DUE',
+  UNPAID = 'UNPAID',
+}
+
+export enum SubscriptionInterval {
+  DAY = 'DAY',
+  WEEK = 'WEEK',
+  MONTH = 'MONTH',
+  YEAR = 'YEAR',
+  CUSTOM = 'CUSTOM',
 }
 
 export enum Metric {
@@ -558,6 +582,13 @@ export enum InvoiceLanguage {
   IT = 'IT',
 }
 
+export enum InvoiceSource {
+  INTERNAL = 'INTERNAL',
+  STRIPE = 'STRIPE',
+  PADDLE = 'PADDLE',
+  MANUAL = 'MANUAL',
+}
+
 export enum InvoiceStatus {
   DRAFT = 'DRAFT',
   ISSUED = 'ISSUED',
@@ -565,6 +596,7 @@ export enum InvoiceStatus {
   PAID = 'PAID',
   VOID = 'VOID',
   CANCELED = 'CANCELED',
+  OPEN = 'OPEN',
 }
 
 export enum InvoiceType {
@@ -671,4 +703,13 @@ export enum EmailType {
   SYSTEM_OUTAGE = 'SYSTEM_OUTAGE',
   DAILY_REPORT = 'DAILY_REPORT',
   OTHER = 'OTHER',
+}
+
+export enum ConfigValueType {
+  STRING = 'STRING',
+  NUMBER = 'NUMBER',
+  BOOLEAN = 'BOOLEAN',
+  JSON = 'JSON',
+  ARRAY_STRING = 'ARRAY_STRING',
+  ARRAY_NUMBER = 'ARRAY_NUMBER',
 }

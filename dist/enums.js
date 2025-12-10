@@ -88,6 +88,9 @@ export var MerchantCallbackType;
     MerchantCallbackType["TRANSACTION_CHANGED"] = "TRANSACTION_CHANGED";
     MerchantCallbackType["TRANSACTION_DELETED"] = "TRANSACTION_DELETED";
     MerchantCallbackType["TRANSACTION_STATUS_CHANGED"] = "TRANSACTION_STATUS_CHANGED";
+    MerchantCallbackType["SUBSCRIPTION_CREATED"] = "SUBSCRIPTION_CREATED";
+    MerchantCallbackType["SUBSCRIPTION_UPDATED"] = "SUBSCRIPTION_UPDATED";
+    MerchantCallbackType["SUBSCRIPTION_CANCELLED"] = "SUBSCRIPTION_CANCELLED";
     MerchantCallbackType["PAYIN_DESTINATION_ACCOUNT_CREATED"] = "PAYIN_DESTINATION_ACCOUNT_CREATED";
     MerchantCallbackType["PAYIN_DESTINATION_ACCOUNT_UPDATED"] = "PAYIN_DESTINATION_ACCOUNT_UPDATED";
     MerchantCallbackType["PAYIN_DESTINATION_ACCOUNT_DELETED"] = "PAYIN_DESTINATION_ACCOUNT_DELETED";
@@ -297,6 +300,7 @@ export var PayIdType;
 export var PayinDestinationType;
 (function (PayinDestinationType) {
     PayinDestinationType["STANDARD"] = "STANDARD";
+    PayinDestinationType["SUBSCRIPTION"] = "SUBSCRIPTION";
     PayinDestinationType["VIRTUAL"] = "VIRTUAL";
     PayinDestinationType["VIRTUAL_POOL"] = "VIRTUAL_POOL";
 })(PayinDestinationType || (PayinDestinationType = {}));
@@ -465,6 +469,7 @@ export var MerchantLicenseType;
     MerchantLicenseType["TRIAL"] = "TRIAL";
     MerchantLicenseType["SUBSCRIPTION"] = "SUBSCRIPTION";
     MerchantLicenseType["ENTERPRISE"] = "ENTERPRISE";
+    MerchantLicenseType["OWNER"] = "OWNER";
 })(MerchantLicenseType || (MerchantLicenseType = {}));
 export var MerchantLicenseStatus;
 (function (MerchantLicenseStatus) {
@@ -473,6 +478,25 @@ export var MerchantLicenseStatus;
     MerchantLicenseStatus["CANCELED"] = "CANCELED";
     MerchantLicenseStatus["SUSPENDED"] = "SUSPENDED";
 })(MerchantLicenseStatus || (MerchantLicenseStatus = {}));
+export var SubscriptionStatus;
+(function (SubscriptionStatus) {
+    SubscriptionStatus["ACTIVE"] = "ACTIVE";
+    SubscriptionStatus["PAUSED"] = "PAUSED";
+    SubscriptionStatus["CANCELED"] = "CANCELED";
+    SubscriptionStatus["INCOMPLETE"] = "INCOMPLETE";
+    SubscriptionStatus["INCOMPLETE_EXPIRED"] = "INCOMPLETE_EXPIRED";
+    SubscriptionStatus["TRIALING"] = "TRIALING";
+    SubscriptionStatus["PAST_DUE"] = "PAST_DUE";
+    SubscriptionStatus["UNPAID"] = "UNPAID";
+})(SubscriptionStatus || (SubscriptionStatus = {}));
+export var SubscriptionInterval;
+(function (SubscriptionInterval) {
+    SubscriptionInterval["DAY"] = "DAY";
+    SubscriptionInterval["WEEK"] = "WEEK";
+    SubscriptionInterval["MONTH"] = "MONTH";
+    SubscriptionInterval["YEAR"] = "YEAR";
+    SubscriptionInterval["CUSTOM"] = "CUSTOM";
+})(SubscriptionInterval || (SubscriptionInterval = {}));
 export var Metric;
 (function (Metric) {
     Metric["SUCCESSFUL_TX"] = "SUCCESSFUL_TX";
@@ -558,6 +582,13 @@ export var InvoiceLanguage;
     InvoiceLanguage["PT"] = "PT";
     InvoiceLanguage["IT"] = "IT";
 })(InvoiceLanguage || (InvoiceLanguage = {}));
+export var InvoiceSource;
+(function (InvoiceSource) {
+    InvoiceSource["INTERNAL"] = "INTERNAL";
+    InvoiceSource["STRIPE"] = "STRIPE";
+    InvoiceSource["PADDLE"] = "PADDLE";
+    InvoiceSource["MANUAL"] = "MANUAL";
+})(InvoiceSource || (InvoiceSource = {}));
 export var InvoiceStatus;
 (function (InvoiceStatus) {
     InvoiceStatus["DRAFT"] = "DRAFT";
@@ -566,6 +597,7 @@ export var InvoiceStatus;
     InvoiceStatus["PAID"] = "PAID";
     InvoiceStatus["VOID"] = "VOID";
     InvoiceStatus["CANCELED"] = "CANCELED";
+    InvoiceStatus["OPEN"] = "OPEN";
 })(InvoiceStatus || (InvoiceStatus = {}));
 export var InvoiceType;
 (function (InvoiceType) {
@@ -673,3 +705,12 @@ export var EmailType;
     EmailType["DAILY_REPORT"] = "DAILY_REPORT";
     EmailType["OTHER"] = "OTHER";
 })(EmailType || (EmailType = {}));
+export var ConfigValueType;
+(function (ConfigValueType) {
+    ConfigValueType["STRING"] = "STRING";
+    ConfigValueType["NUMBER"] = "NUMBER";
+    ConfigValueType["BOOLEAN"] = "BOOLEAN";
+    ConfigValueType["JSON"] = "JSON";
+    ConfigValueType["ARRAY_STRING"] = "ARRAY_STRING";
+    ConfigValueType["ARRAY_NUMBER"] = "ARRAY_NUMBER";
+})(ConfigValueType || (ConfigValueType = {}));

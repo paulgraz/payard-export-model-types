@@ -76,6 +76,9 @@ export declare enum MerchantCallbackType {
     TRANSACTION_CHANGED = "TRANSACTION_CHANGED",
     TRANSACTION_DELETED = "TRANSACTION_DELETED",
     TRANSACTION_STATUS_CHANGED = "TRANSACTION_STATUS_CHANGED",
+    SUBSCRIPTION_CREATED = "SUBSCRIPTION_CREATED",
+    SUBSCRIPTION_UPDATED = "SUBSCRIPTION_UPDATED",
+    SUBSCRIPTION_CANCELLED = "SUBSCRIPTION_CANCELLED",
     PAYIN_DESTINATION_ACCOUNT_CREATED = "PAYIN_DESTINATION_ACCOUNT_CREATED",
     PAYIN_DESTINATION_ACCOUNT_UPDATED = "PAYIN_DESTINATION_ACCOUNT_UPDATED",
     PAYIN_DESTINATION_ACCOUNT_DELETED = "PAYIN_DESTINATION_ACCOUNT_DELETED",
@@ -258,6 +261,7 @@ export declare enum PayIdType {
 }
 export declare enum PayinDestinationType {
     STANDARD = "STANDARD",
+    SUBSCRIPTION = "SUBSCRIPTION",
     VIRTUAL = "VIRTUAL",
     VIRTUAL_POOL = "VIRTUAL_POOL"
 }
@@ -407,13 +411,31 @@ export declare enum Environment {
 export declare enum MerchantLicenseType {
     TRIAL = "TRIAL",
     SUBSCRIPTION = "SUBSCRIPTION",
-    ENTERPRISE = "ENTERPRISE"
+    ENTERPRISE = "ENTERPRISE",
+    OWNER = "OWNER"
 }
 export declare enum MerchantLicenseStatus {
     ACTIVE = "ACTIVE",
     EXPIRED = "EXPIRED",
     CANCELED = "CANCELED",
     SUSPENDED = "SUSPENDED"
+}
+export declare enum SubscriptionStatus {
+    ACTIVE = "ACTIVE",
+    PAUSED = "PAUSED",
+    CANCELED = "CANCELED",
+    INCOMPLETE = "INCOMPLETE",
+    INCOMPLETE_EXPIRED = "INCOMPLETE_EXPIRED",
+    TRIALING = "TRIALING",
+    PAST_DUE = "PAST_DUE",
+    UNPAID = "UNPAID"
+}
+export declare enum SubscriptionInterval {
+    DAY = "DAY",
+    WEEK = "WEEK",
+    MONTH = "MONTH",
+    YEAR = "YEAR",
+    CUSTOM = "CUSTOM"
 }
 export declare enum Metric {
     SUCCESSFUL_TX = "SUCCESSFUL_TX",
@@ -489,13 +511,20 @@ export declare enum InvoiceLanguage {
     PT = "PT",
     IT = "IT"
 }
+export declare enum InvoiceSource {
+    INTERNAL = "INTERNAL",
+    STRIPE = "STRIPE",
+    PADDLE = "PADDLE",
+    MANUAL = "MANUAL"
+}
 export declare enum InvoiceStatus {
     DRAFT = "DRAFT",
     ISSUED = "ISSUED",
     PARTIALLY_PAID = "PARTIALLY_PAID",
     PAID = "PAID",
     VOID = "VOID",
-    CANCELED = "CANCELED"
+    CANCELED = "CANCELED",
+    OPEN = "OPEN"
 }
 export declare enum InvoiceType {
     INVOICE = "INVOICE",
@@ -593,4 +622,12 @@ export declare enum EmailType {
     SYSTEM_OUTAGE = "SYSTEM_OUTAGE",
     DAILY_REPORT = "DAILY_REPORT",
     OTHER = "OTHER"
+}
+export declare enum ConfigValueType {
+    STRING = "STRING",
+    NUMBER = "NUMBER",
+    BOOLEAN = "BOOLEAN",
+    JSON = "JSON",
+    ARRAY_STRING = "ARRAY_STRING",
+    ARRAY_NUMBER = "ARRAY_NUMBER"
 }
