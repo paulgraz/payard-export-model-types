@@ -15,7 +15,8 @@ export declare enum ApiCallType {
     OTHER = "OTHER"
 }
 export declare enum TransactionType {
-    PAYMENT = "PAYMENT"
+    PAYMENT = "PAYMENT",
+    RECURRING_PAYMENT = "RECURRING_PAYMENT"
 }
 export declare enum TransactionStatus {
     UNKNOWN = "UNKNOWN",
@@ -421,6 +422,7 @@ export declare enum MerchantLicenseStatus {
     SUSPENDED = "SUSPENDED"
 }
 export declare enum SubscriptionStatus {
+    UNKNOWN = "UNKNOWN",
     ACTIVE = "ACTIVE",
     PAUSED = "PAUSED",
     CANCELED = "CANCELED",
@@ -513,8 +515,7 @@ export declare enum InvoiceLanguage {
 }
 export declare enum InvoiceSource {
     INTERNAL = "INTERNAL",
-    STRIPE = "STRIPE",
-    PADDLE = "PADDLE",
+    EXTERNAL = "EXTERNAL",
     MANUAL = "MANUAL"
 }
 export declare enum InvoiceStatus {

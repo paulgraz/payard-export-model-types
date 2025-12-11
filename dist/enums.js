@@ -19,6 +19,7 @@ export var ApiCallType;
 export var TransactionType;
 (function (TransactionType) {
     TransactionType["PAYMENT"] = "PAYMENT";
+    TransactionType["RECURRING_PAYMENT"] = "RECURRING_PAYMENT";
 })(TransactionType || (TransactionType = {}));
 export var TransactionStatus;
 (function (TransactionStatus) {
@@ -480,6 +481,7 @@ export var MerchantLicenseStatus;
 })(MerchantLicenseStatus || (MerchantLicenseStatus = {}));
 export var SubscriptionStatus;
 (function (SubscriptionStatus) {
+    SubscriptionStatus["UNKNOWN"] = "UNKNOWN";
     SubscriptionStatus["ACTIVE"] = "ACTIVE";
     SubscriptionStatus["PAUSED"] = "PAUSED";
     SubscriptionStatus["CANCELED"] = "CANCELED";
@@ -585,8 +587,7 @@ export var InvoiceLanguage;
 export var InvoiceSource;
 (function (InvoiceSource) {
     InvoiceSource["INTERNAL"] = "INTERNAL";
-    InvoiceSource["STRIPE"] = "STRIPE";
-    InvoiceSource["PADDLE"] = "PADDLE";
+    InvoiceSource["EXTERNAL"] = "EXTERNAL";
     InvoiceSource["MANUAL"] = "MANUAL";
 })(InvoiceSource || (InvoiceSource = {}));
 export var InvoiceStatus;
