@@ -40,6 +40,7 @@ export enum TransactionStage {
   PREAUTH = 'PREAUTH',
   CAPTURE = 'CAPTURE',
   WRAP_UP = 'WRAP_UP',
+  REFUND = 'REFUND',
 }
 
 export enum PaymentOrderType {
@@ -91,6 +92,10 @@ export enum MerchantCallbackType {
   SUBSCRIPTION_CREATED = 'SUBSCRIPTION_CREATED',
   SUBSCRIPTION_UPDATED = 'SUBSCRIPTION_UPDATED',
   SUBSCRIPTION_CANCELLED = 'SUBSCRIPTION_CANCELLED',
+  PAYIN_DESTINATION_CREATED = 'PAYIN_DESTINATION_CREATED',
+  PAYIN_DESTINATION_UPDATED = 'PAYIN_DESTINATION_UPDATED',
+  PAYIN_DESTINATION_DELETED = 'PAYIN_DESTINATION_DELETED',
+  PAYIN_DESTINATION_STATUS_CHANGED = 'PAYIN_DESTINATION_STATUS_CHANGED',
   PAYIN_DESTINATION_ACCOUNT_CREATED = 'PAYIN_DESTINATION_ACCOUNT_CREATED',
   PAYIN_DESTINATION_ACCOUNT_UPDATED = 'PAYIN_DESTINATION_ACCOUNT_UPDATED',
   PAYIN_DESTINATION_ACCOUNT_DELETED = 'PAYIN_DESTINATION_ACCOUNT_DELETED',
@@ -111,6 +116,7 @@ export enum MerchantCallbackType {
   RULE_UPDATED = 'RULE_UPDATED',
   RULE_DELETED = 'RULE_DELETED',
   RULE_TRIGGERED = 'RULE_TRIGGERED',
+  CASCADE_NEW_PAYMENT_PROVIDER_ASSIGNED = 'CASCADE_NEW_PAYMENT_PROVIDER_ASSIGNED',
   ADMIN_MESSAGE = 'ADMIN_MESSAGE',
   USER_MESSAGE = 'USER_MESSAGE',
 }
@@ -215,6 +221,12 @@ export enum Gender {
   OTHER = 'OTHER',
 }
 
+export enum PaymentProviderRuleHandlingStatus {
+  NOT_HANDLED = 'NOT_HANDLED',
+  HANDLED = 'HANDLED',
+  ERROR = 'ERROR',
+}
+
 export enum RuleOperator {
   EQUAL = 'EQUAL',
   NOT_EQUAL = 'NOT_EQUAL',
@@ -250,6 +262,29 @@ export enum RuleConditionType {
   DAY_TIME_DENIED = 'DAY_TIME_DENIED',
   CUSTOM = 'CUSTOM',
   CUSTOM_ARRAY = 'CUSTOM_ARRAY',
+}
+
+export enum LoadBalancingStrategy {
+  ROUND_ROBIN = 'ROUND_ROBIN',
+  WEIGHTED_RANDOM = 'WEIGHTED_RANDOM',
+  LEAST_LOADED = 'LEAST_LOADED',
+  WEIGHTED_ROUND_ROBIN = 'WEIGHTED_ROUND_ROBIN',
+}
+
+export enum MerchantPaymentProviderCascadeOverride {
+  USE_GLOBAL = 'USE_GLOBAL',
+  OVERRIDE = 'OVERRIDE',
+}
+
+export enum RuleCascadeOverride {
+  USE_GLOBAL = 'USE_GLOBAL',
+  FORCE_ENABLED = 'FORCE_ENABLED',
+  FORCE_DISABLED = 'FORCE_DISABLED',
+}
+
+export enum ProviderSelectionMode {
+  STATIC = 'STATIC',
+  DYNAMIC = 'DYNAMIC',
 }
 
 export enum ActionType {
@@ -293,9 +328,9 @@ export enum PaymentMethod {
 export enum PayIdType {
   ABN = 'ABN',
   ACN = 'ACN',
-  Email = 'Email',
-  PhoneNumber = 'PhoneNumber',
-  OrganisationId = 'OrganisationId',
+  EMAIL = 'EMAIL',
+  PHONE_NUMBER = 'PHONE_NUMBER',
+  ORGANIZATION_ID = 'ORGANIZATION_ID',
 }
 
 export enum PayinDestinationType {
@@ -624,6 +659,7 @@ export enum MerchantApplicationDomainPurpose {
   DASHBOARD = 'DASHBOARD',
   CHECKOUT = 'CHECKOUT',
   WEBHOOK = 'WEBHOOK',
+  PAY_ID = 'PAY_ID',
   ANY = 'ANY',
 }
 
@@ -704,6 +740,22 @@ export enum EmailType {
   SYSTEM_OUTAGE = 'SYSTEM_OUTAGE',
   DAILY_REPORT = 'DAILY_REPORT',
   OTHER = 'OTHER',
+}
+
+export enum PayoutSourceType {
+  ACCOUNT = 'ACCOUNT',
+  CLIENT = 'CLIENT',
+  WALLET = 'WALLET',
+  PAYMENT_ORDER = 'PAYMENT_ORDER',
+  OTHER = 'OTHER',
+}
+
+export enum CardCaptureSessionStatus {
+  PENDING = 'PENDING',
+  TOKEN_GENERATED = 'TOKEN_GENERATED',
+  COMPLETED = 'COMPLETED',
+  EXPIRED = 'EXPIRED',
+  FAILED = 'FAILED',
 }
 
 export enum ConfigValueType {

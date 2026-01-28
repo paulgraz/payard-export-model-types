@@ -35,7 +35,8 @@ export declare enum TransactionStage {
     PENDING = "PENDING",
     PREAUTH = "PREAUTH",
     CAPTURE = "CAPTURE",
-    WRAP_UP = "WRAP_UP"
+    WRAP_UP = "WRAP_UP",
+    REFUND = "REFUND"
 }
 export declare enum PaymentOrderType {
     PAYIN = "PAYIN",
@@ -80,6 +81,10 @@ export declare enum MerchantCallbackType {
     SUBSCRIPTION_CREATED = "SUBSCRIPTION_CREATED",
     SUBSCRIPTION_UPDATED = "SUBSCRIPTION_UPDATED",
     SUBSCRIPTION_CANCELLED = "SUBSCRIPTION_CANCELLED",
+    PAYIN_DESTINATION_CREATED = "PAYIN_DESTINATION_CREATED",
+    PAYIN_DESTINATION_UPDATED = "PAYIN_DESTINATION_UPDATED",
+    PAYIN_DESTINATION_DELETED = "PAYIN_DESTINATION_DELETED",
+    PAYIN_DESTINATION_STATUS_CHANGED = "PAYIN_DESTINATION_STATUS_CHANGED",
     PAYIN_DESTINATION_ACCOUNT_CREATED = "PAYIN_DESTINATION_ACCOUNT_CREATED",
     PAYIN_DESTINATION_ACCOUNT_UPDATED = "PAYIN_DESTINATION_ACCOUNT_UPDATED",
     PAYIN_DESTINATION_ACCOUNT_DELETED = "PAYIN_DESTINATION_ACCOUNT_DELETED",
@@ -100,6 +105,7 @@ export declare enum MerchantCallbackType {
     RULE_UPDATED = "RULE_UPDATED",
     RULE_DELETED = "RULE_DELETED",
     RULE_TRIGGERED = "RULE_TRIGGERED",
+    CASCADE_NEW_PAYMENT_PROVIDER_ASSIGNED = "CASCADE_NEW_PAYMENT_PROVIDER_ASSIGNED",
     ADMIN_MESSAGE = "ADMIN_MESSAGE",
     USER_MESSAGE = "USER_MESSAGE"
 }
@@ -186,6 +192,11 @@ export declare enum Gender {
     FEMALE = "FEMALE",
     OTHER = "OTHER"
 }
+export declare enum PaymentProviderRuleHandlingStatus {
+    NOT_HANDLED = "NOT_HANDLED",
+    HANDLED = "HANDLED",
+    ERROR = "ERROR"
+}
 export declare enum RuleOperator {
     EQUAL = "EQUAL",
     NOT_EQUAL = "NOT_EQUAL",
@@ -219,6 +230,25 @@ export declare enum RuleConditionType {
     DAY_TIME_DENIED = "DAY_TIME_DENIED",
     CUSTOM = "CUSTOM",
     CUSTOM_ARRAY = "CUSTOM_ARRAY"
+}
+export declare enum LoadBalancingStrategy {
+    ROUND_ROBIN = "ROUND_ROBIN",
+    WEIGHTED_RANDOM = "WEIGHTED_RANDOM",
+    LEAST_LOADED = "LEAST_LOADED",
+    WEIGHTED_ROUND_ROBIN = "WEIGHTED_ROUND_ROBIN"
+}
+export declare enum MerchantPaymentProviderCascadeOverride {
+    USE_GLOBAL = "USE_GLOBAL",
+    OVERRIDE = "OVERRIDE"
+}
+export declare enum RuleCascadeOverride {
+    USE_GLOBAL = "USE_GLOBAL",
+    FORCE_ENABLED = "FORCE_ENABLED",
+    FORCE_DISABLED = "FORCE_DISABLED"
+}
+export declare enum ProviderSelectionMode {
+    STATIC = "STATIC",
+    DYNAMIC = "DYNAMIC"
 }
 export declare enum ActionType {
     SIGNUP = "SIGNUP",
@@ -256,9 +286,9 @@ export declare enum PaymentMethod {
 export declare enum PayIdType {
     ABN = "ABN",
     ACN = "ACN",
-    Email = "Email",
-    PhoneNumber = "PhoneNumber",
-    OrganisationId = "OrganisationId"
+    EMAIL = "EMAIL",
+    PHONE_NUMBER = "PHONE_NUMBER",
+    ORGANIZATION_ID = "ORGANIZATION_ID"
 }
 export declare enum PayinDestinationType {
     STANDARD = "STANDARD",
@@ -549,6 +579,7 @@ export declare enum MerchantApplicationDomainPurpose {
     DASHBOARD = "DASHBOARD",
     CHECKOUT = "CHECKOUT",
     WEBHOOK = "WEBHOOK",
+    PAY_ID = "PAY_ID",
     ANY = "ANY"
 }
 export declare enum LicensePeriodStatus {
@@ -623,6 +654,20 @@ export declare enum EmailType {
     SYSTEM_OUTAGE = "SYSTEM_OUTAGE",
     DAILY_REPORT = "DAILY_REPORT",
     OTHER = "OTHER"
+}
+export declare enum PayoutSourceType {
+    ACCOUNT = "ACCOUNT",
+    CLIENT = "CLIENT",
+    WALLET = "WALLET",
+    PAYMENT_ORDER = "PAYMENT_ORDER",
+    OTHER = "OTHER"
+}
+export declare enum CardCaptureSessionStatus {
+    PENDING = "PENDING",
+    TOKEN_GENERATED = "TOKEN_GENERATED",
+    COMPLETED = "COMPLETED",
+    EXPIRED = "EXPIRED",
+    FAILED = "FAILED"
 }
 export declare enum ConfigValueType {
     STRING = "STRING",

@@ -41,6 +41,7 @@ export var TransactionStage;
     TransactionStage["PREAUTH"] = "PREAUTH";
     TransactionStage["CAPTURE"] = "CAPTURE";
     TransactionStage["WRAP_UP"] = "WRAP_UP";
+    TransactionStage["REFUND"] = "REFUND";
 })(TransactionStage || (TransactionStage = {}));
 export var PaymentOrderType;
 (function (PaymentOrderType) {
@@ -92,6 +93,10 @@ export var MerchantCallbackType;
     MerchantCallbackType["SUBSCRIPTION_CREATED"] = "SUBSCRIPTION_CREATED";
     MerchantCallbackType["SUBSCRIPTION_UPDATED"] = "SUBSCRIPTION_UPDATED";
     MerchantCallbackType["SUBSCRIPTION_CANCELLED"] = "SUBSCRIPTION_CANCELLED";
+    MerchantCallbackType["PAYIN_DESTINATION_CREATED"] = "PAYIN_DESTINATION_CREATED";
+    MerchantCallbackType["PAYIN_DESTINATION_UPDATED"] = "PAYIN_DESTINATION_UPDATED";
+    MerchantCallbackType["PAYIN_DESTINATION_DELETED"] = "PAYIN_DESTINATION_DELETED";
+    MerchantCallbackType["PAYIN_DESTINATION_STATUS_CHANGED"] = "PAYIN_DESTINATION_STATUS_CHANGED";
     MerchantCallbackType["PAYIN_DESTINATION_ACCOUNT_CREATED"] = "PAYIN_DESTINATION_ACCOUNT_CREATED";
     MerchantCallbackType["PAYIN_DESTINATION_ACCOUNT_UPDATED"] = "PAYIN_DESTINATION_ACCOUNT_UPDATED";
     MerchantCallbackType["PAYIN_DESTINATION_ACCOUNT_DELETED"] = "PAYIN_DESTINATION_ACCOUNT_DELETED";
@@ -112,6 +117,7 @@ export var MerchantCallbackType;
     MerchantCallbackType["RULE_UPDATED"] = "RULE_UPDATED";
     MerchantCallbackType["RULE_DELETED"] = "RULE_DELETED";
     MerchantCallbackType["RULE_TRIGGERED"] = "RULE_TRIGGERED";
+    MerchantCallbackType["CASCADE_NEW_PAYMENT_PROVIDER_ASSIGNED"] = "CASCADE_NEW_PAYMENT_PROVIDER_ASSIGNED";
     MerchantCallbackType["ADMIN_MESSAGE"] = "ADMIN_MESSAGE";
     MerchantCallbackType["USER_MESSAGE"] = "USER_MESSAGE";
 })(MerchantCallbackType || (MerchantCallbackType = {}));
@@ -215,6 +221,12 @@ export var Gender;
     Gender["FEMALE"] = "FEMALE";
     Gender["OTHER"] = "OTHER";
 })(Gender || (Gender = {}));
+export var PaymentProviderRuleHandlingStatus;
+(function (PaymentProviderRuleHandlingStatus) {
+    PaymentProviderRuleHandlingStatus["NOT_HANDLED"] = "NOT_HANDLED";
+    PaymentProviderRuleHandlingStatus["HANDLED"] = "HANDLED";
+    PaymentProviderRuleHandlingStatus["ERROR"] = "ERROR";
+})(PaymentProviderRuleHandlingStatus || (PaymentProviderRuleHandlingStatus = {}));
 export var RuleOperator;
 (function (RuleOperator) {
     RuleOperator["EQUAL"] = "EQUAL";
@@ -252,6 +264,29 @@ export var RuleConditionType;
     RuleConditionType["CUSTOM"] = "CUSTOM";
     RuleConditionType["CUSTOM_ARRAY"] = "CUSTOM_ARRAY";
 })(RuleConditionType || (RuleConditionType = {}));
+export var LoadBalancingStrategy;
+(function (LoadBalancingStrategy) {
+    LoadBalancingStrategy["ROUND_ROBIN"] = "ROUND_ROBIN";
+    LoadBalancingStrategy["WEIGHTED_RANDOM"] = "WEIGHTED_RANDOM";
+    LoadBalancingStrategy["LEAST_LOADED"] = "LEAST_LOADED";
+    LoadBalancingStrategy["WEIGHTED_ROUND_ROBIN"] = "WEIGHTED_ROUND_ROBIN";
+})(LoadBalancingStrategy || (LoadBalancingStrategy = {}));
+export var MerchantPaymentProviderCascadeOverride;
+(function (MerchantPaymentProviderCascadeOverride) {
+    MerchantPaymentProviderCascadeOverride["USE_GLOBAL"] = "USE_GLOBAL";
+    MerchantPaymentProviderCascadeOverride["OVERRIDE"] = "OVERRIDE";
+})(MerchantPaymentProviderCascadeOverride || (MerchantPaymentProviderCascadeOverride = {}));
+export var RuleCascadeOverride;
+(function (RuleCascadeOverride) {
+    RuleCascadeOverride["USE_GLOBAL"] = "USE_GLOBAL";
+    RuleCascadeOverride["FORCE_ENABLED"] = "FORCE_ENABLED";
+    RuleCascadeOverride["FORCE_DISABLED"] = "FORCE_DISABLED";
+})(RuleCascadeOverride || (RuleCascadeOverride = {}));
+export var ProviderSelectionMode;
+(function (ProviderSelectionMode) {
+    ProviderSelectionMode["STATIC"] = "STATIC";
+    ProviderSelectionMode["DYNAMIC"] = "DYNAMIC";
+})(ProviderSelectionMode || (ProviderSelectionMode = {}));
 export var ActionType;
 (function (ActionType) {
     ActionType["SIGNUP"] = "SIGNUP";
@@ -294,9 +329,9 @@ export var PayIdType;
 (function (PayIdType) {
     PayIdType["ABN"] = "ABN";
     PayIdType["ACN"] = "ACN";
-    PayIdType["Email"] = "Email";
-    PayIdType["PhoneNumber"] = "PhoneNumber";
-    PayIdType["OrganisationId"] = "OrganisationId";
+    PayIdType["EMAIL"] = "EMAIL";
+    PayIdType["PHONE_NUMBER"] = "PHONE_NUMBER";
+    PayIdType["ORGANIZATION_ID"] = "ORGANIZATION_ID";
 })(PayIdType || (PayIdType = {}));
 export var PayinDestinationType;
 (function (PayinDestinationType) {
@@ -625,6 +660,7 @@ export var MerchantApplicationDomainPurpose;
     MerchantApplicationDomainPurpose["DASHBOARD"] = "DASHBOARD";
     MerchantApplicationDomainPurpose["CHECKOUT"] = "CHECKOUT";
     MerchantApplicationDomainPurpose["WEBHOOK"] = "WEBHOOK";
+    MerchantApplicationDomainPurpose["PAY_ID"] = "PAY_ID";
     MerchantApplicationDomainPurpose["ANY"] = "ANY";
 })(MerchantApplicationDomainPurpose || (MerchantApplicationDomainPurpose = {}));
 export var LicensePeriodStatus;
@@ -706,6 +742,22 @@ export var EmailType;
     EmailType["DAILY_REPORT"] = "DAILY_REPORT";
     EmailType["OTHER"] = "OTHER";
 })(EmailType || (EmailType = {}));
+export var PayoutSourceType;
+(function (PayoutSourceType) {
+    PayoutSourceType["ACCOUNT"] = "ACCOUNT";
+    PayoutSourceType["CLIENT"] = "CLIENT";
+    PayoutSourceType["WALLET"] = "WALLET";
+    PayoutSourceType["PAYMENT_ORDER"] = "PAYMENT_ORDER";
+    PayoutSourceType["OTHER"] = "OTHER";
+})(PayoutSourceType || (PayoutSourceType = {}));
+export var CardCaptureSessionStatus;
+(function (CardCaptureSessionStatus) {
+    CardCaptureSessionStatus["PENDING"] = "PENDING";
+    CardCaptureSessionStatus["TOKEN_GENERATED"] = "TOKEN_GENERATED";
+    CardCaptureSessionStatus["COMPLETED"] = "COMPLETED";
+    CardCaptureSessionStatus["EXPIRED"] = "EXPIRED";
+    CardCaptureSessionStatus["FAILED"] = "FAILED";
+})(CardCaptureSessionStatus || (CardCaptureSessionStatus = {}));
 export var ConfigValueType;
 (function (ConfigValueType) {
     ConfigValueType["STRING"] = "STRING";
