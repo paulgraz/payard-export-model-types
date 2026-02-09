@@ -34,20 +34,71 @@ export enum TransactionStatus {
   EXPIRED = 'EXPIRED',
 }
 
+export enum PaymentOrderStatus {
+  UNKNOWN = 'UNKNOWN',
+  INITIATED = 'INITIATED',
+  IN_PROGRESS = 'IN_PROGRESS',
+  ON_HOLD = 'ON_HOLD',
+  COMPLETED = 'COMPLETED',
+  CANCELED = 'CANCELED',
+  DECLINED = 'DECLINED',
+  BLOCKED = 'BLOCKED',
+  FAILED = 'FAILED',
+  EXPIRED = 'EXPIRED',
+  IN_REFUND = 'IN_REFUND',
+  REFUNDED = 'REFUNDED',
+  PARTIALLY_REFUNDED = 'PARTIALLY_REFUNDED',
+  IN_DISPUTE = 'IN_DISPUTE',
+  DISPUTED = 'DISPUTED',
+  PARTIALLY_CHARGEBACKED = 'PARTIALLY_CHARGEBACKED',
+  CHARGEBACKED = 'CHARGEBACKED',
+}
+
+export enum PaymentOperationStatus {
+  UNKNOWN = 'UNKNOWN',
+  INITIATED = 'INITIATED',
+  IN_PROGRESS = 'IN_PROGRESS',
+  ON_HOLD = 'ON_HOLD',
+  COMPLETED = 'COMPLETED',
+  CANCELED = 'CANCELED',
+  DECLINED = 'DECLINED',
+  BLOCKED = 'BLOCKED',
+  FAILED = 'FAILED',
+  EXPIRED = 'EXPIRED',
+}
+
+export enum PayoutStatus {
+  UNKNOWN = 'UNKNOWN',
+  INITIATED = 'INITIATED',
+  IN_PROGRESS = 'IN_PROGRESS',
+  ON_HOLD = 'ON_HOLD',
+  COMPLETED = 'COMPLETED',
+  CANCELED = 'CANCELED',
+  DECLINED = 'DECLINED',
+  BLOCKED = 'BLOCKED',
+  FAILED = 'FAILED',
+  EXPIRED = 'EXPIRED',
+}
+
 export enum TransactionStage {
   VERIFICATION = 'VERIFICATION',
   PENDING = 'PENDING',
   PREAUTH = 'PREAUTH',
   CAPTURE = 'CAPTURE',
   WRAP_UP = 'WRAP_UP',
-  REFUND = 'REFUND',
+}
+
+export enum PaymentOrderStage {
+  VERIFICATION = 'VERIFICATION',
+  PENDING = 'PENDING',
+  PREAUTH = 'PREAUTH',
+  CAPTURE = 'CAPTURE',
+  WRAP_UP = 'WRAP_UP',
 }
 
 export enum PaymentOrderType {
   PAYIN = 'PAYIN',
   PAYOUT = 'PAYOUT',
-  REFUND = 'REFUND',
-  CHARGEBACK = 'CHARGEBACK',
 }
 
 export enum PaymentOperationType {
@@ -64,6 +115,27 @@ export enum PaymentVerificationStatus {
   SUCCESS = 'SUCCESS',
   WARNINGS = 'WARNINGS',
   ERRORS = 'ERRORS',
+}
+
+export enum PaymentOrderReversalType {
+  NONE = 'NONE',
+  REFUND = 'REFUND',
+  CHARGEBACK = 'CHARGEBACK',
+}
+
+export enum PaymentOrderReversalScope {
+  NONE = 'NONE',
+  PARTIAL = 'PARTIAL',
+  FULL = 'FULL',
+}
+
+export enum ChargebackLegalStatus {
+  NONE = 'NONE',
+  DISPUTE_OPEN = 'DISPUTE_OPEN',
+  REPRESENTING = 'REPRESENTING',
+  ARBITRATION = 'ARBITRATION',
+  WON_MERCHANT = 'WON_MERCHANT',
+  LOST_MERCHANT = 'LOST_MERCHANT',
 }
 
 export enum MerchantType {
@@ -125,6 +197,23 @@ export enum MerchantCallbackResult {
   PENDING = 'PENDING',
   DELIVERED = 'DELIVERED',
   FAILED = 'FAILED',
+  DISABLED = 'DISABLED',
+}
+
+export enum TelegramNotificationChannel {
+  TRANSACTION_FAILED = 'TRANSACTION_FAILED',
+  LICENSE_RENEWAL = 'LICENSE_RENEWAL',
+  LICENSE_CREATED = 'LICENSE_CREATED',
+  DEBUG = 'DEBUG',
+  INFO = 'INFO',
+  WARNING = 'WARNING',
+  ERROR = 'ERROR',
+  PAYOUT_FAILED = 'PAYOUT_FAILED',
+  REFUND_FAILED = 'REFUND_FAILED',
+}
+
+export enum TelegramNotificationStatus {
+  ENABLED = 'ENABLED',
   DISABLED = 'DISABLED',
 }
 

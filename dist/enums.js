@@ -34,6 +34,52 @@ export var TransactionStatus;
     TransactionStatus["FAILED"] = "FAILED";
     TransactionStatus["EXPIRED"] = "EXPIRED";
 })(TransactionStatus || (TransactionStatus = {}));
+export var PaymentOrderStatus;
+(function (PaymentOrderStatus) {
+    PaymentOrderStatus["UNKNOWN"] = "UNKNOWN";
+    PaymentOrderStatus["INITIATED"] = "INITIATED";
+    PaymentOrderStatus["IN_PROGRESS"] = "IN_PROGRESS";
+    PaymentOrderStatus["ON_HOLD"] = "ON_HOLD";
+    PaymentOrderStatus["COMPLETED"] = "COMPLETED";
+    PaymentOrderStatus["CANCELED"] = "CANCELED";
+    PaymentOrderStatus["DECLINED"] = "DECLINED";
+    PaymentOrderStatus["BLOCKED"] = "BLOCKED";
+    PaymentOrderStatus["FAILED"] = "FAILED";
+    PaymentOrderStatus["EXPIRED"] = "EXPIRED";
+    PaymentOrderStatus["IN_REFUND"] = "IN_REFUND";
+    PaymentOrderStatus["REFUNDED"] = "REFUNDED";
+    PaymentOrderStatus["PARTIALLY_REFUNDED"] = "PARTIALLY_REFUNDED";
+    PaymentOrderStatus["IN_DISPUTE"] = "IN_DISPUTE";
+    PaymentOrderStatus["DISPUTED"] = "DISPUTED";
+    PaymentOrderStatus["PARTIALLY_CHARGEBACKED"] = "PARTIALLY_CHARGEBACKED";
+    PaymentOrderStatus["CHARGEBACKED"] = "CHARGEBACKED";
+})(PaymentOrderStatus || (PaymentOrderStatus = {}));
+export var PaymentOperationStatus;
+(function (PaymentOperationStatus) {
+    PaymentOperationStatus["UNKNOWN"] = "UNKNOWN";
+    PaymentOperationStatus["INITIATED"] = "INITIATED";
+    PaymentOperationStatus["IN_PROGRESS"] = "IN_PROGRESS";
+    PaymentOperationStatus["ON_HOLD"] = "ON_HOLD";
+    PaymentOperationStatus["COMPLETED"] = "COMPLETED";
+    PaymentOperationStatus["CANCELED"] = "CANCELED";
+    PaymentOperationStatus["DECLINED"] = "DECLINED";
+    PaymentOperationStatus["BLOCKED"] = "BLOCKED";
+    PaymentOperationStatus["FAILED"] = "FAILED";
+    PaymentOperationStatus["EXPIRED"] = "EXPIRED";
+})(PaymentOperationStatus || (PaymentOperationStatus = {}));
+export var PayoutStatus;
+(function (PayoutStatus) {
+    PayoutStatus["UNKNOWN"] = "UNKNOWN";
+    PayoutStatus["INITIATED"] = "INITIATED";
+    PayoutStatus["IN_PROGRESS"] = "IN_PROGRESS";
+    PayoutStatus["ON_HOLD"] = "ON_HOLD";
+    PayoutStatus["COMPLETED"] = "COMPLETED";
+    PayoutStatus["CANCELED"] = "CANCELED";
+    PayoutStatus["DECLINED"] = "DECLINED";
+    PayoutStatus["BLOCKED"] = "BLOCKED";
+    PayoutStatus["FAILED"] = "FAILED";
+    PayoutStatus["EXPIRED"] = "EXPIRED";
+})(PayoutStatus || (PayoutStatus = {}));
 export var TransactionStage;
 (function (TransactionStage) {
     TransactionStage["VERIFICATION"] = "VERIFICATION";
@@ -41,14 +87,19 @@ export var TransactionStage;
     TransactionStage["PREAUTH"] = "PREAUTH";
     TransactionStage["CAPTURE"] = "CAPTURE";
     TransactionStage["WRAP_UP"] = "WRAP_UP";
-    TransactionStage["REFUND"] = "REFUND";
 })(TransactionStage || (TransactionStage = {}));
+export var PaymentOrderStage;
+(function (PaymentOrderStage) {
+    PaymentOrderStage["VERIFICATION"] = "VERIFICATION";
+    PaymentOrderStage["PENDING"] = "PENDING";
+    PaymentOrderStage["PREAUTH"] = "PREAUTH";
+    PaymentOrderStage["CAPTURE"] = "CAPTURE";
+    PaymentOrderStage["WRAP_UP"] = "WRAP_UP";
+})(PaymentOrderStage || (PaymentOrderStage = {}));
 export var PaymentOrderType;
 (function (PaymentOrderType) {
     PaymentOrderType["PAYIN"] = "PAYIN";
     PaymentOrderType["PAYOUT"] = "PAYOUT";
-    PaymentOrderType["REFUND"] = "REFUND";
-    PaymentOrderType["CHARGEBACK"] = "CHARGEBACK";
 })(PaymentOrderType || (PaymentOrderType = {}));
 export var PaymentOperationType;
 (function (PaymentOperationType) {
@@ -66,6 +117,27 @@ export var PaymentVerificationStatus;
     PaymentVerificationStatus["WARNINGS"] = "WARNINGS";
     PaymentVerificationStatus["ERRORS"] = "ERRORS";
 })(PaymentVerificationStatus || (PaymentVerificationStatus = {}));
+export var PaymentOrderReversalType;
+(function (PaymentOrderReversalType) {
+    PaymentOrderReversalType["NONE"] = "NONE";
+    PaymentOrderReversalType["REFUND"] = "REFUND";
+    PaymentOrderReversalType["CHARGEBACK"] = "CHARGEBACK";
+})(PaymentOrderReversalType || (PaymentOrderReversalType = {}));
+export var PaymentOrderReversalScope;
+(function (PaymentOrderReversalScope) {
+    PaymentOrderReversalScope["NONE"] = "NONE";
+    PaymentOrderReversalScope["PARTIAL"] = "PARTIAL";
+    PaymentOrderReversalScope["FULL"] = "FULL";
+})(PaymentOrderReversalScope || (PaymentOrderReversalScope = {}));
+export var ChargebackLegalStatus;
+(function (ChargebackLegalStatus) {
+    ChargebackLegalStatus["NONE"] = "NONE";
+    ChargebackLegalStatus["DISPUTE_OPEN"] = "DISPUTE_OPEN";
+    ChargebackLegalStatus["REPRESENTING"] = "REPRESENTING";
+    ChargebackLegalStatus["ARBITRATION"] = "ARBITRATION";
+    ChargebackLegalStatus["WON_MERCHANT"] = "WON_MERCHANT";
+    ChargebackLegalStatus["LOST_MERCHANT"] = "LOST_MERCHANT";
+})(ChargebackLegalStatus || (ChargebackLegalStatus = {}));
 export var MerchantType;
 (function (MerchantType) {
     MerchantType["OWNER"] = "OWNER";
@@ -128,6 +200,23 @@ export var MerchantCallbackResult;
     MerchantCallbackResult["FAILED"] = "FAILED";
     MerchantCallbackResult["DISABLED"] = "DISABLED";
 })(MerchantCallbackResult || (MerchantCallbackResult = {}));
+export var TelegramNotificationChannel;
+(function (TelegramNotificationChannel) {
+    TelegramNotificationChannel["TRANSACTION_FAILED"] = "TRANSACTION_FAILED";
+    TelegramNotificationChannel["LICENSE_RENEWAL"] = "LICENSE_RENEWAL";
+    TelegramNotificationChannel["LICENSE_CREATED"] = "LICENSE_CREATED";
+    TelegramNotificationChannel["DEBUG"] = "DEBUG";
+    TelegramNotificationChannel["INFO"] = "INFO";
+    TelegramNotificationChannel["WARNING"] = "WARNING";
+    TelegramNotificationChannel["ERROR"] = "ERROR";
+    TelegramNotificationChannel["PAYOUT_FAILED"] = "PAYOUT_FAILED";
+    TelegramNotificationChannel["REFUND_FAILED"] = "REFUND_FAILED";
+})(TelegramNotificationChannel || (TelegramNotificationChannel = {}));
+export var TelegramNotificationStatus;
+(function (TelegramNotificationStatus) {
+    TelegramNotificationStatus["ENABLED"] = "ENABLED";
+    TelegramNotificationStatus["DISABLED"] = "DISABLED";
+})(TelegramNotificationStatus || (TelegramNotificationStatus = {}));
 export var MerchantMode;
 (function (MerchantMode) {
     MerchantMode["SIMPLE"] = "SIMPLE";
