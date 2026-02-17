@@ -166,6 +166,7 @@ var MerchantCallbackType;
     MerchantCallbackType["TRANSACTION_CHANGED"] = "TRANSACTION_CHANGED";
     MerchantCallbackType["TRANSACTION_DELETED"] = "TRANSACTION_DELETED";
     MerchantCallbackType["TRANSACTION_STATUS_CHANGED"] = "TRANSACTION_STATUS_CHANGED";
+    MerchantCallbackType["TRANSACTION_NEW_PAYMENT"] = "TRANSACTION_NEW_PAYMENT";
     MerchantCallbackType["SUBSCRIPTION_CREATED"] = "SUBSCRIPTION_CREATED";
     MerchantCallbackType["SUBSCRIPTION_UPDATED"] = "SUBSCRIPTION_UPDATED";
     MerchantCallbackType["SUBSCRIPTION_CANCELLED"] = "SUBSCRIPTION_CANCELLED";
@@ -441,6 +442,8 @@ var PayoutDestinationType;
 var ApiKeyType;
 (function (ApiKeyType) {
     ApiKeyType["FULL_ACCESS"] = "FULL_ACCESS";
+    ApiKeyType["ADVANCED_ACCESS"] = "ADVANCED_ACCESS";
+    ApiKeyType["CLIENT_ACCESS"] = "CLIENT_ACCESS";
     ApiKeyType["PAYMENT_ONLY"] = "PAYMENT_ONLY";
 })(ApiKeyType || (exports.ApiKeyType = ApiKeyType = {}));
 var FinancialAccountNameType;
