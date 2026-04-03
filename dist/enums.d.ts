@@ -80,6 +80,14 @@ export declare enum TransactionStage {
     CAPTURE = "CAPTURE",
     WRAP_UP = "WRAP_UP"
 }
+export declare enum TransactionPendingRequestType {
+    PREAUTH = "PREAUTH"
+}
+export declare enum TransactionPendingRequestStatus {
+    PENDING = "PENDING",
+    PROCESSED = "PROCESSED",
+    FAILED = "FAILED"
+}
 export declare enum PaymentOrderStage {
     VERIFICATION = "VERIFICATION",
     PENDING = "PENDING",
@@ -555,12 +563,14 @@ export declare enum SubscriptionInterval {
 export declare enum Metric {
     SUCCESSFUL_TX = "SUCCESSFUL_TX",
     API_CALL = "API_CALL",
-    WEBHOOK_OUT = "WEBHOOK_OUT"
+    WEBHOOK_OUT = "WEBHOOK_OUT",
+    TX_VOLUME = "TX_VOLUME"
 }
 export declare enum PlanBillingModel {
     BASE_FEE_PLUS_USAGE = "BASE_FEE_PLUS_USAGE",
     USAGE_ONLY = "USAGE_ONLY",
-    FLAT_SUBSCRIPTION = "FLAT_SUBSCRIPTION"
+    FLAT_SUBSCRIPTION = "FLAT_SUBSCRIPTION",
+    MINIMUM_FEE = "MINIMUM_FEE"
 }
 export declare enum AddonBillingModel {
     FLAT_MONTHLY = "FLAT_MONTHLY",
@@ -656,6 +666,7 @@ export declare enum MerchantInvoiceLineKind {
     TAX = "TAX",
     REFUND = "REFUND",
     CHARGEBACK_FEE = "CHARGEBACK_FEE",
+    TX_VOLUME_OVERAGE = "TX_VOLUME_OVERAGE",
     OTHER = "OTHER"
 }
 export declare enum MerchantApplicationDomainPurpose {

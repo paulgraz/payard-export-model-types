@@ -88,6 +88,16 @@ export enum TransactionStage {
   WRAP_UP = 'WRAP_UP',
 }
 
+export enum TransactionPendingRequestType {
+  PREAUTH = 'PREAUTH',
+}
+
+export enum TransactionPendingRequestStatus {
+  PENDING = 'PENDING',
+  PROCESSED = 'PROCESSED',
+  FAILED = 'FAILED',
+}
+
 export enum PaymentOrderStage {
   VERIFICATION = 'VERIFICATION',
   PENDING = 'PENDING',
@@ -630,12 +640,14 @@ export enum Metric {
   SUCCESSFUL_TX = 'SUCCESSFUL_TX',
   API_CALL = 'API_CALL',
   WEBHOOK_OUT = 'WEBHOOK_OUT',
+  TX_VOLUME = 'TX_VOLUME',
 }
 
 export enum PlanBillingModel {
   BASE_FEE_PLUS_USAGE = 'BASE_FEE_PLUS_USAGE',
   USAGE_ONLY = 'USAGE_ONLY',
   FLAT_SUBSCRIPTION = 'FLAT_SUBSCRIPTION',
+  MINIMUM_FEE = 'MINIMUM_FEE',
 }
 
 export enum AddonBillingModel {
@@ -744,6 +756,7 @@ export enum MerchantInvoiceLineKind {
   TAX = 'TAX',
   REFUND = 'REFUND',
   CHARGEBACK_FEE = 'CHARGEBACK_FEE',
+  TX_VOLUME_OVERAGE = 'TX_VOLUME_OVERAGE',
   OTHER = 'OTHER',
 }
 
