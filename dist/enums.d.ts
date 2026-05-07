@@ -756,6 +756,12 @@ export declare enum PayoutSourceType {
     PAYMENT_ORDER = "PAYMENT_ORDER",
     OTHER = "OTHER"
 }
+export declare enum TransactionKycStatus {
+    NOT_STARTED = "NOT_STARTED",
+    PENDING = "PENDING",
+    APPROVED = "APPROVED",
+    DECLINED = "DECLINED"
+}
 export declare enum CardCaptureSessionStatus {
     PENDING = "PENDING",
     TOKEN_GENERATED = "TOKEN_GENERATED",

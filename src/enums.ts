@@ -855,6 +855,13 @@ export enum PayoutSourceType {
   OTHER = 'OTHER',
 }
 
+export enum TransactionKycStatus {
+  NOT_STARTED = 'NOT_STARTED',
+  PENDING = 'PENDING',
+  APPROVED = 'APPROVED',
+  DECLINED = 'DECLINED',
+}
+
 export enum CardCaptureSessionStatus {
   PENDING = 'PENDING',
   TOKEN_GENERATED = 'TOKEN_GENERATED',
