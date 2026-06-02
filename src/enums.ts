@@ -387,6 +387,11 @@ export enum ProviderSelectionMode {
   DYNAMIC = 'DYNAMIC',
 }
 
+export enum PaymentSystemSelectionMode {
+  STATIC = 'STATIC',
+  DYNAMIC = 'DYNAMIC',
+}
+
 export enum ActionType {
   SIGNUP = 'SIGNUP',
   LOGIN = 'LOGIN',
@@ -484,6 +489,7 @@ export enum FinancialInstitutionCodeType {
   BLZ = 'BLZ',
   IFS = 'IFS',
   NCC = 'NCC',
+  ROUTING_NUMBER = 'ROUTING_NUMBER',
 }
 
 export enum PayinDestinationPoolStatus {
@@ -525,6 +531,11 @@ export enum PayinDestinationAccountStatus {
   DISABLED = 'DISABLED',
   CLOSED = 'CLOSED',
   UNVERIFIED = 'UNVERIFIED',
+}
+
+export enum UserBankAccountStatus {
+  ACTIVE = 'ACTIVE',
+  DISABLED = 'DISABLED',
 }
 
 export enum PayoutDestinationGroupStatus {

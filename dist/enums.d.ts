@@ -339,6 +339,10 @@ export declare enum ProviderSelectionMode {
     STATIC = "STATIC",
     DYNAMIC = "DYNAMIC"
 }
+export declare enum PaymentSystemSelectionMode {
+    STATIC = "STATIC",
+    DYNAMIC = "DYNAMIC"
+}
 export declare enum ActionType {
     SIGNUP = "SIGNUP",
     LOGIN = "LOGIN",
@@ -424,7 +428,8 @@ export declare enum FinancialInstitutionCodeType {
     ABA = "ABA",
     BLZ = "BLZ",
     IFS = "IFS",
-    NCC = "NCC"
+    NCC = "NCC",
+    ROUTING_NUMBER = "ROUTING_NUMBER"
 }
 export declare enum PayinDestinationPoolStatus {
     UNASSIGNED = "UNASSIGNED",
@@ -461,6 +466,10 @@ export declare enum PayinDestinationAccountStatus {
     DISABLED = "DISABLED",
     CLOSED = "CLOSED",
     UNVERIFIED = "UNVERIFIED"
+}
+export declare enum UserBankAccountStatus {
+    ACTIVE = "ACTIVE",
+    DISABLED = "DISABLED"
 }
 export declare enum PayoutDestinationGroupStatus {
     PENDING = "PENDING",

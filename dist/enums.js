@@ -1,8 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ActionObjectType = exports.ActionType = exports.ProviderSelectionMode = exports.RuleCascadeOverride = exports.MerchantPaymentProviderCascadeOverride = exports.LoadBalancingStrategy = exports.RuleConditionType = exports.RuleOperatorCombiner = exports.RuleOperator = exports.PaymentProviderRuleHandlingStatus = exports.Gender = exports.ScreeningStatus = exports.RiskLevel = exports.UserStatus = exports.UserOrigin = exports.UserCategory = exports.UserMode = exports.UserIdDocType = exports.UserType = exports.MerchantApplicationStatus = exports.MerchantPartyType = exports.MerchantStatus = exports.MerchantOrigin = exports.MerchantRiskLevel = exports.MerchantCategory = exports.MerchantMode = exports.TelegramNotificationStatus = exports.TelegramNotificationChannel = exports.MerchantCallbackResult = exports.MerchantCallbackType = exports.ResponseType = exports.MerchantApplicationType = exports.MerchantType = exports.ChargebackLegalStatus = exports.PaymentOrderReversalScope = exports.PaymentOrderReversalType = exports.PaymentVerificationStatus = exports.PaymentOperationType = exports.PaymentOrderType = exports.PaymentOrderStage = exports.TransactionPendingRequestStatus = exports.TransactionPendingRequestType = exports.TransactionStage = exports.PayoutStatus = exports.PaymentOperationStatus = exports.PaymentOrderStatus = exports.TransactionStatus = exports.TransactionType = exports.ApiCallType = exports.ApiMethod = void 0;
-exports.TransactionKycStatus = exports.PayoutSourceType = exports.EmailType = exports.EmailCorrelationType = exports.SentEmailStatus = exports.LicenseBillingStatus = exports.LicensePeriodReason = exports.LicensePeriodStatus = exports.MerchantApplicationDomainPurpose = exports.MerchantInvoiceLineKind = exports.InvoiceType = exports.InvoiceStatus = exports.InvoiceSource = exports.InvoiceLanguage = exports.TaxCalcMode = exports.TaxIdType = exports.MerchantProfileContactRole = exports.MerchantAddressType = exports.MerchantAddonStatus = exports.SupportTier = exports.OveragePolicy = exports.AddonBillingModel = exports.PlanBillingModel = exports.Metric = exports.SubscriptionInterval = exports.SubscriptionStatus = exports.MerchantLicenseStatus = exports.MerchantLicenseType = exports.Environment = exports.AutoFixWebhookStrategy = exports.TransactionPurpose = exports.RequiredUserField = exports.PayoutDestinationAccountStatus = exports.PayoutDestinationStatus = exports.PayoutDestinationGroupStatus = exports.PayinDestinationAccountStatus = exports.PayinDestinationStatus = exports.PayinDestinationGroupStatus = exports.PayinDestinationAccountPoolStatus = exports.PayinDestinationPoolStatus = exports.FinancialInstitutionCodeType = exports.FinancialAccountIdType = exports.FinancialAccountNameType = exports.ApiKeyType = exports.PayoutDestinationType = exports.PayinDestinationType = exports.PayIdType = exports.PaymentMethod = exports.LoginStatus = exports.NotificationLevel = void 0;
-exports.ConfigValueType = exports.CardCaptureSessionStatus = void 0;
+exports.ActionType = exports.PaymentSystemSelectionMode = exports.ProviderSelectionMode = exports.RuleCascadeOverride = exports.MerchantPaymentProviderCascadeOverride = exports.LoadBalancingStrategy = exports.RuleConditionType = exports.RuleOperatorCombiner = exports.RuleOperator = exports.PaymentProviderRuleHandlingStatus = exports.Gender = exports.ScreeningStatus = exports.RiskLevel = exports.UserStatus = exports.UserOrigin = exports.UserCategory = exports.UserMode = exports.UserIdDocType = exports.UserType = exports.MerchantApplicationStatus = exports.MerchantPartyType = exports.MerchantStatus = exports.MerchantOrigin = exports.MerchantRiskLevel = exports.MerchantCategory = exports.MerchantMode = exports.TelegramNotificationStatus = exports.TelegramNotificationChannel = exports.MerchantCallbackResult = exports.MerchantCallbackType = exports.ResponseType = exports.MerchantApplicationType = exports.MerchantType = exports.ChargebackLegalStatus = exports.PaymentOrderReversalScope = exports.PaymentOrderReversalType = exports.PaymentVerificationStatus = exports.PaymentOperationType = exports.PaymentOrderType = exports.PaymentOrderStage = exports.TransactionPendingRequestStatus = exports.TransactionPendingRequestType = exports.TransactionStage = exports.PayoutStatus = exports.PaymentOperationStatus = exports.PaymentOrderStatus = exports.TransactionStatus = exports.TransactionType = exports.ApiCallType = exports.ApiMethod = void 0;
+exports.EmailType = exports.EmailCorrelationType = exports.SentEmailStatus = exports.LicenseBillingStatus = exports.LicensePeriodReason = exports.LicensePeriodStatus = exports.MerchantApplicationDomainPurpose = exports.MerchantInvoiceLineKind = exports.InvoiceType = exports.InvoiceStatus = exports.InvoiceSource = exports.InvoiceLanguage = exports.TaxCalcMode = exports.TaxIdType = exports.MerchantProfileContactRole = exports.MerchantAddressType = exports.MerchantAddonStatus = exports.SupportTier = exports.OveragePolicy = exports.AddonBillingModel = exports.PlanBillingModel = exports.Metric = exports.SubscriptionInterval = exports.SubscriptionStatus = exports.MerchantLicenseStatus = exports.MerchantLicenseType = exports.Environment = exports.AutoFixWebhookStrategy = exports.TransactionPurpose = exports.RequiredUserField = exports.PayoutDestinationAccountStatus = exports.PayoutDestinationStatus = exports.PayoutDestinationGroupStatus = exports.UserBankAccountStatus = exports.PayinDestinationAccountStatus = exports.PayinDestinationStatus = exports.PayinDestinationGroupStatus = exports.PayinDestinationAccountPoolStatus = exports.PayinDestinationPoolStatus = exports.FinancialInstitutionCodeType = exports.FinancialAccountIdType = exports.FinancialAccountNameType = exports.ApiKeyType = exports.PayoutDestinationType = exports.PayinDestinationType = exports.PayIdType = exports.PaymentMethod = exports.LoginStatus = exports.NotificationLevel = exports.ActionObjectType = void 0;
+exports.ConfigValueType = exports.CardCaptureSessionStatus = exports.TransactionKycStatus = exports.PayoutSourceType = void 0;
 var ApiMethod;
 (function (ApiMethod) {
     ApiMethod["GET"] = "GET";
@@ -392,6 +392,11 @@ var ProviderSelectionMode;
     ProviderSelectionMode["STATIC"] = "STATIC";
     ProviderSelectionMode["DYNAMIC"] = "DYNAMIC";
 })(ProviderSelectionMode || (exports.ProviderSelectionMode = ProviderSelectionMode = {}));
+var PaymentSystemSelectionMode;
+(function (PaymentSystemSelectionMode) {
+    PaymentSystemSelectionMode["STATIC"] = "STATIC";
+    PaymentSystemSelectionMode["DYNAMIC"] = "DYNAMIC";
+})(PaymentSystemSelectionMode || (exports.PaymentSystemSelectionMode = PaymentSystemSelectionMode = {}));
 var ActionType;
 (function (ActionType) {
     ActionType["SIGNUP"] = "SIGNUP";
@@ -490,6 +495,7 @@ var FinancialInstitutionCodeType;
     FinancialInstitutionCodeType["BLZ"] = "BLZ";
     FinancialInstitutionCodeType["IFS"] = "IFS";
     FinancialInstitutionCodeType["NCC"] = "NCC";
+    FinancialInstitutionCodeType["ROUTING_NUMBER"] = "ROUTING_NUMBER";
 })(FinancialInstitutionCodeType || (exports.FinancialInstitutionCodeType = FinancialInstitutionCodeType = {}));
 var PayinDestinationPoolStatus;
 (function (PayinDestinationPoolStatus) {
@@ -532,6 +538,11 @@ var PayinDestinationAccountStatus;
     PayinDestinationAccountStatus["CLOSED"] = "CLOSED";
     PayinDestinationAccountStatus["UNVERIFIED"] = "UNVERIFIED";
 })(PayinDestinationAccountStatus || (exports.PayinDestinationAccountStatus = PayinDestinationAccountStatus = {}));
+var UserBankAccountStatus;
+(function (UserBankAccountStatus) {
+    UserBankAccountStatus["ACTIVE"] = "ACTIVE";
+    UserBankAccountStatus["DISABLED"] = "DISABLED";
+})(UserBankAccountStatus || (exports.UserBankAccountStatus = UserBankAccountStatus = {}));
 var PayoutDestinationGroupStatus;
 (function (PayoutDestinationGroupStatus) {
     PayoutDestinationGroupStatus["PENDING"] = "PENDING";
