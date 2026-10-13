@@ -80,26 +80,14 @@ export enum PayoutStatus {
   EXPIRED = 'EXPIRED',
 }
 
-/**
- * The statuses a payout may be recorded as, when recording one that was made directly in the
- * provider's console instead of dispatching one. Available on both create routes: an owner-admin
- * records anyone's payouts, a merchant their own. Every value is an outcome the payout has already
- * reached — the four PayoutStatus values left out (UNKNOWN, INITIATED, IN_PROGRESS, ON_HOLD) describe a
- * payout still on its way somewhere, and a recorded payout is not on its way anywhere: no provider call
- * was made, so no postback is coming and there is no dispatch to retry.
- *
- * Mirrors RECORDABLE_PAYOUT_STATUSES in the backend's payout-create.recordable-dto.ts, which enforces it
- * with @IsIn on both the admin and the merchant create route. Keep the two in step: a form built from
- * the full PayoutStatus enum offers four choices the API refuses.
- */
-export const RECORDABLE_PAYOUT_STATUSES: PayoutStatus[] = [
-  PayoutStatus.COMPLETED,
-  PayoutStatus.FAILED,
-  PayoutStatus.CANCELED,
-  PayoutStatus.DECLINED,
-  PayoutStatus.BLOCKED,
-  PayoutStatus.EXPIRED,
-];
+export enum RecordablePayoutStatus {
+  COMPLETED = 'COMPLETED',
+  FAILED = 'FAILED',
+  CANCELED = 'CANCELED',
+  DECLINED = 'DECLINED',
+  BLOCKED = 'BLOCKED',
+  EXPIRED = 'EXPIRED',
+}
 
 export enum TransactionStage {
   VERIFICATION = 'VERIFICATION',
